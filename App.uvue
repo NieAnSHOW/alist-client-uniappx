@@ -35,6 +35,9 @@
 </script>
 
 <style>
+	/* #ifdef WEB */
+	@import url('@/autocss/index.css');
+	/* #endif */
 	/*每个页面公共css */
 	.uni-row {
 		flex-direction: row;

@@ -1,38 +1,22 @@
 <template>
 	<view>
-		<image class="logo" src="/static/logo.png"></image>
-		<view class="text-area">
-			<text class="title">{{title}}</text>
+		<view class="flex flex-direction-row alist-fs-34" @click="login">
+			<view class="">
+				登录
+			</view>
 		</view>
 	</view>
 </template>
 
-<script>
-	export default {
-		data() {
-			return {
-				title: 'Hello'
-			}
-		},
-		onLoad() {
+<script setup>
+	import { authLogin } from '@/api/apiBase.uts'
 
-		},
-		methods: {
-
-		}
+	const login = () => {
+		authLogin({
+			"username": "lovebb",
+			"password": "lovebb0617"
+		}).then(({ data }) => {
+			console.log(data);
+		})
 	}
 </script>
-
-<style>
-	.logo {
-		height: 100px;
-		width: 100px;
-		margin: 100px auto 25px auto;
-	}
-
-	.title {
-		font-size: 18px;
-		color: #8f8f94;
-    text-align: center;
-	}
-</style>

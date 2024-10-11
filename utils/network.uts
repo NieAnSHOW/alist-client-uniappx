@@ -1,0 +1,49 @@
+import Request from 'luch-request' // 使用npm
+import {
+	TokenKey,
+} from '@/utils/auth.uts'
+import {
+	BASE_API_IP
+} from '@/config/ip.uts'
+
+const http = new Request();
+http.setConfig((config) => {
+	/* config 为默认全局配置*/
+	config.baseURL = BASE_API_IP + '/api'
+
+	return config
+})
+http.interceptors.request.use((config) => { // 可使用async await 做异步操作
+	let tokeny : any = uni.getStorageSync(TokenKey)
+	if (!(tokeny == '')) {
+		config.header = {
+			...config.header,
+			'Authorization': tokeny
+		}
+	}
+	// store.commit('system/SET_LOADING', true)
+	return config
+}, config => { // 可使用async await 做异步操作
+	return Promise.reject(config)
+})
+
+http.interceptors.response.use((response) => {
+	const { data } = response
+	if (data.code != 200) {
+		uni.showToast({
+			icon: 'none',
+			title: data.message
+		})
+		return Promise.reject(response.data)
+	}
+	return data
+}, (response) => {
+	if (response.data.code != 0) {
+		uni.showToast({
+			icon: 'error',
+			title: '接口异常'
+		})
+	}
+	return Promise.reject(response.data)
+})
+export default http

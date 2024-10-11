@@ -1,0 +1,14 @@
+import http from '@/utils/network.uts'
+
+/**
+ * 
+ * 注册/登陆
+ * 
+ */
+export function authLogin(data) {
+	return http.request({
+		url: '/auth/login',
+		method: 'POST',
+		data
+	})
+}
