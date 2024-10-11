@@ -102,5 +102,6 @@ module.exports = {
 				0: '#E8F7FF'
 			}
 		}
-	}
+	},
+	generateGlobalCss: true
 }

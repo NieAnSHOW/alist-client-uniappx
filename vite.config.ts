@@ -7,8 +7,7 @@ export default defineConfig({
 		uni(),
 		autocss({
 			configFile: 'autocss/config.js',
-			cssFile: 'autocss/index.css',
-			generateGlobalCss: true
+			cssFile: 'autocss/index.css'
 		})
 	]
 });
