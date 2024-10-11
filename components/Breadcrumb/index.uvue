@@ -1,0 +1,18 @@
+<template>
+	<view class="p-20">
+		<view class="flex" v-for="(item,index) in BreadcrumbList" :key="index">
+			{{item}}
+		</view>
+		<!-- <view class="">
+			
+		</view> -->
+	</view>
+</template>
+
+<script setup>
+	const BreadcrumbList = reactive(['主页','ailiyun'])
+</script>
+
+<style>
+
+</style>

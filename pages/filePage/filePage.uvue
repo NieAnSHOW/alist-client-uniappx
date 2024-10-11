@@ -1,0 +1,84 @@
+<template>
+	<view class="text-24 fw-bolder px-20 py-10">
+		Alist
+	</view>
+	<Breadcrumb />
+	<view class="container">
+		<view class="flex align-items-center" v-for="item,index in genFileList[dirLevel]" :key="index"
+			@click="nextDir(index)">
+			<view class="bg-eeeeee p-20 mb-5 br-18p">
+				<image style="width: 50px;height: 46px;" src="@/static/images/file.png" mode=""></image>
+			</view>
+			<view class="text-12">
+				{{item.name}}
+			</view>
+		</view>
+	</view>
+</template>
+
+<script setup>
+	import type { FileInfo } from '@/types/user';
+	import Breadcrumb from '@/components/Breadcrumb/index.uvue'
+
+	const filesList = reactive<Array<FileInfo>>([
+		{
+			name: "aliyun",
+			size: 1592,
+			is_dir: true,
+			modified: "2024-05-17T13:47:55.4174917+08:00",
+			created: "2024-05-17T13:47:47.5725906+08:00",
+			sign: "",
+			thumb: "",
+			type: 4,
+			hashinfo: "null",
+			hash_info: null
+		}
+	])
+	const filesListChild = reactive<Array<FileInfo>>([
+		{
+			name: "Logs",
+			size: 1592,
+			is_dir: false,
+			modified: "2024-05-17T13:47:55.4174917+08:00",
+			created: "2024-05-17T13:47:47.5725906+08:00",
+			sign: "",
+			thumb: "",
+			type: 4,
+			hashinfo: "null",
+			hash_info: null
+		},
+		{
+			name: "备份",
+			size: 1592,
+			is_dir: true,
+			modified: "2024-05-17T13:47:55.4174917+08:00",
+			created: "2024-05-17T13:47:47.5725906+08:00",
+			sign: "",
+			thumb: "",
+			type: 4,
+			hashinfo: "null",
+			hash_info: null
+		}
+	])
+
+	// 下钻子目录，下钻时记录每层目录的数据，组装成树形结构
+	const genFileList = reactive<Array<any>>([]);
+	// 文件层级
+	const dirLevel = ref<number>(0)
+	const nextDir = (nextLevel : number) => {
+		dirLevel.value = nextLevel + 1
+		genFileList.push(filesListChild)
+	}
+
+	onMounted(() => {
+		genFileList.push(filesList)
+	})
+</script>
+
+<style lang="scss" scoped>
+	.container {
+		display: grid;
+		grid-template-columns: repeat(auto-fill, minmax(23.333%, 1fr));
+		gap: 10px;
+	}
+</style>
