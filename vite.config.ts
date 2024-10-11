@@ -8,6 +8,7 @@ export default defineConfig({
 		autocss({
 			configFile: 'autocss/config.js',
 			cssFile: 'autocss/index.css',
+			generateGlobalCss: true
 		})
 	]
 });

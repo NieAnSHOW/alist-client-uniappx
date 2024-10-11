@@ -7,7 +7,7 @@
 			<view class="bg-eeeeee p-20 mb-5 br-18p">
 				<image style="width: 50px;height: 46px;" src="@/static/images/file.png" mode=""></image>
 			</view>
-			<view class="text-14">
+			<view class="text-12">
 				文件名称
 			</view>
 		</view>

@@ -1,3 +1,7 @@
-import Cookies from "js-cookie";
+// import Cookies from "js-cookie";
 
 export const TokenKey = "ALIST-TOKEN";
+
+export function setToken(token : string) {
+	uni.setStorageSync('TokenKey', token)
+}

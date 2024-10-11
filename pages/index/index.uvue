@@ -10,13 +10,13 @@
 
 <script setup>
 	import { authLogin } from '@/api/apiBase.uts'
-
+	import { setToken } from '@/utils/auth.uts'
 	const login = () => {
 		authLogin({
 			"username": "lovebb",
 			"password": "lovebb0617"
 		}).then(({ data }) => {
-			console.log(data);
+			setToken(data.token)
 		})
 	}
 </script>

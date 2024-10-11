@@ -1,11 +1,11 @@
 import http from '@/utils/network.uts'
-
+import type { User } from '@/types/user';
 /**
  * 
  * 注册/登陆
  * 
  */
-export function authLogin(data) {
+export function authLogin(data : User) {
 	return http.request({
 		url: '/auth/login',
 		method: 'POST',
