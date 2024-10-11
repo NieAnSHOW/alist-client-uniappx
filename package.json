@@ -1,0 +1,25 @@
+{
+  "name": "alist-client-uniappx",
+  "version": "1.0.0",
+  "description": "alist-client-uniappx",
+  "main": "index.js",
+  "dependencies": {
+    "@dcloudio/types": "^3.4.12",
+    "js-cookie": "^3.0.5",
+    "luch-request": "^3.1.1"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/NieAnSHOW/alist-client-uniappx.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/NieAnSHOW/alist-client-uniappx/issues"
+  },
+  "homepage": "https://github.com/NieAnSHOW/alist-client-uniappx#readme"
+}
