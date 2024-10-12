@@ -3,13 +3,14 @@
   @see https://gitcode.com/kviewui/kux-autocss
   @version: v1.0.12
   @author kux <kviewui@163.com>
-  2024-10-11 21:16:09
+  2024-10-12 10:12:05
   该文件将会自动初始化并更新，切勿直接修改！
 */
 
 /* font-size */
 .text-24{ font-size: 24px; }
 .text-12{ font-size: 12px; }
+.alist-fs-34{ font-size: 34px; }
 /* font-weight */
 .fw-bolder{ font-weight: bolder; }
 /* padding-x */
@@ -28,3 +29,5 @@
 .mb-5{ margin-bottom: 5px; }
 /* borderRadius */
 .br-18p{ border-radius: 18%; }
+/* flex-direction */
+.flex-direction-row{ flex-direction: row; }

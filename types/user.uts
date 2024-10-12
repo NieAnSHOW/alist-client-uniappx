@@ -13,5 +13,5 @@ export type FileInfo = {
 	thumb : string,
 	type : number,
 	hashinfo : string,
-	hash_info : any
+	hash_info? : any | null
 }

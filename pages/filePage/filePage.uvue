@@ -17,7 +17,7 @@
 </template>
 
 <script setup>
-	import type { FileInfo } from '@/types/user';
+	import { FileInfo } from '@/types/user';
 	import Breadcrumb from '@/components/Breadcrumb/index.uvue'
 
 	const filesList = reactive<Array<FileInfo>>([
